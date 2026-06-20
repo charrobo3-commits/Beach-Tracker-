@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShoreLine Beach Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-icon">🌊</span>
+      <div>
+        <h1>ShoreLine</h1>
+        <p>Your beach conditions & community hub</p>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <button data-section="dashboard" class="nav-button active">Dashboard</button>
+      <button data-section="feed" class="nav-button">Feed</button>
+      <button data-section="events" class="nav-button">Events</button>
+      <button data-section="alerts" class="nav-button">Alerts</button>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section id="dashboard" class="page-section">
+      <h2>Conditions Dashboard</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <h3>Beach</h3>
+          <p id="beach-name">Sunset Point</p>
+        </div>
+        <div class="card">
+          <h3>Wave Height</h3>
+          <p id="wave-height">2.1m</p>
+        </div>
+        <div class="card">
+          <h3>Wind</h3>
+          <p id="wind-speed">18 km/h • NW</p>
+        </div>
+        <div class="card">
+          <h3>UV Index</h3>
+          <p id="uv-index">6 • Moderate</p>
+        </div>
+        <div class="card wide-card">
+          <h3>Tides</h3>
+          <p id="tide-next">Next High: 4:22 PM • Next Low: 10:58 PM</p>
+        </div>
+      </div>
+      <div class="status-pill"><strong>Crowd level:</strong> Moderate (3/5)</div>
+    </section>
+
+    <section id="feed" class="page-section hidden">
+      <h2>Community Feed</h2>
+      <div class="feed-list" id="feed-list"></div>
+    </section>
+
+    <section id="events" class="page-section hidden">
+      <h2>Events Board</h2>
+      <div class="event-list" id="event-list"></div>
+    </section>
+
+    <section id="alerts" class="page-section hidden">
+      <h2>Alert Preferences</h2>
+      <div class="alert-grid">
+        <div class="alert-card">
+          <h3>Red Flag</h3>
+          <p>Stay away from the water until conditions improve.</p>
+          <label><input type="checkbox" checked /> Notify me</label>
+        </div>
+        <div class="alert-card">
+          <h3>Jellyfish</h3>
+          <p>Watch for stings near rocky reefs.</p>
+          <label><input type="checkbox" /> Notify me</label>
+        </div>
+        <div class="alert-card">
+          <h3>Shark Sighting</h3>
+          <p>Alert when a sighting is reported in your saved beaches.</p>
+          <label><input type="checkbox" checked /> Notify me</label>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Simple static prototype built with HTML, CSS, and JavaScript.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
