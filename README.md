@@ -112,20 +112,19 @@ cd shoreline
 # Install dependencies
 npm install
 
-# Set up environment variables
-cp .env.example .env
-# Fill in your API keys (see Environment Variables below)
-
-# Set up the database
+# Create a local database with PostGIS enabled
 psql -U postgres -c "CREATE DATABASE shoreline;"
-psql -U postgres -d shoreline -c "CREATE EXTENSION postgis;"
-npm run db:migrate
+psql -U postgres -d shoreline -c "CREATE EXTENSION IF NOT EXISTS postgis;"
 
-# Start the backend
-npm run server
+# Copy the example environment file
+cp .env.example .env
+# Edit .env and set DATABASE_URL and MAPBOX_ACCESS_TOKEN
 
-# Start the mobile app
-cd mobile && expo start
+# Seed beaches from OpenStreetMap
+npm run seed
+
+# Start the backend and static app
+npm start
 ```
 
 ---
@@ -135,28 +134,9 @@ cd mobile && expo start
 Create a `.env` file at the project root. See `.env.example` for the full template.
 
 ```env
-# Database
 DATABASE_URL=postgresql://user:password@localhost:5432/shoreline
-
-# Firebase
-FIREBASE_PROJECT_ID=your-project-id
-FIREBASE_CLIENT_EMAIL=your-service-account@your-project.iam.gserviceaccount.com
-FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n..."
-
-# Mapbox
 MAPBOX_ACCESS_TOKEN=pk.your_mapbox_token
-
-# Weather APIs
-OPEN_METEO_BASE_URL=https://marine-api.open-meteo.com/v1/marine
-STORMGLASS_API_KEY=your_stormglass_key        # optional, for scale-up
-NOAA_BASE_URL=https://api.tidesandcurrents.noaa.gov/api/prod/datagetter
-TIDES_ATLAS_API_KEY=your_tidesatlas_key       # optional, for international tide data
-
-# AWS
-AWS_ACCESS_KEY_ID=your_aws_key
-AWS_SECRET_ACCESS_KEY=your_aws_secret
-AWS_S3_BUCKET=shoreline-uploads
-AWS_REGION=us-east-1
+PORT=3000
 ```
 
 ---

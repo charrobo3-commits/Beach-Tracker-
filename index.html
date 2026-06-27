@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ShoreLine Beach Tracker</title>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.19.0/mapbox-gl.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -49,6 +50,11 @@
         </div>
       </div>
       <div class="status-pill"><strong>Crowd level:</strong> Moderate (3/5)</div>
+      <div class="map-shell">
+        <h3>Beach map</h3>
+        <div id="beach-map" class="map-container"></div>
+        <p class="map-hint">Explore Portuguese beaches. Click a pin to view the beach name.</p>
+      </div>
     </section>
 
     <section id="feed" class="page-section hidden">
@@ -87,6 +93,10 @@
     <p>Simple static prototype built with HTML, CSS, and JavaScript.</p>
   </footer>
 
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.19.0/mapbox-gl.js"></script>
+  <script>
+    window.MAPBOX_ACCESS_TOKEN = 'YOUR_MAPBOX_ACCESS_TOKEN';
+  </script>
   <script src="script.js"></script>
 </body>
 </html>

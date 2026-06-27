@@ -156,6 +156,28 @@ input {
   font-weight: 600;
 }
 
+.map-shell {
+  margin-top: 1.75rem;
+}
+
+.map-shell h3 {
+  margin-bottom: 0.85rem;
+}
+
+.map-container {
+  width: 100%;
+  min-height: 420px;
+  border-radius: 1rem;
+  border: 1px solid #dfe7ef;
+  overflow: hidden;
+}
+
+.map-hint {
+  margin-top: 0.75rem;
+  color: #486581;
+  font-size: 0.95rem;
+}
+
 .feed-list,
 .event-list {
   display: grid;
